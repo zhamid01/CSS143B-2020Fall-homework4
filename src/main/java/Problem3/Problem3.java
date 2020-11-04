@@ -9,5 +9,7 @@ public class Problem3 {
         if (list == null) {
             return;
         }
+        printListInReverse(list.next, print);
+        print.println(list.val);
     }
 }
