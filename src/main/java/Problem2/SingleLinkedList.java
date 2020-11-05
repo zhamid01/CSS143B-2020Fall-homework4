@@ -84,7 +84,15 @@ public class SingleLinkedList {
         if (n1.next == null) {
             return n1;
         }
+        ListNode temp = null;
+        ListNode main = head.next;
         ListNode n2 = reverseHelper(n1.next);
+        ListNode next = head.next.next;
+        next = main.next;
+        main.next = temp;
+        temp = main;
+        main = next;
+        n1.next = null;
         return n2;
     }
 }
