@@ -1,5 +1,10 @@
 package Problem1;
 
+/*
+This site was used as help in this code:
+https://www.geeksforgeeks.org/binary-search/
+*/
+
 public class BinarySearch {
     // This is to be done recursively
     // Do not change signature (return type, function name, parameter types)
