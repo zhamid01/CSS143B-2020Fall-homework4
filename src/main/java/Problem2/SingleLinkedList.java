@@ -78,17 +78,13 @@ public class SingleLinkedList {
     }
 
     private ListNode reverseHelper(ListNode n1) {
-        if (n1 == null || n1.next == null) {
+        if (n1 == null) {
+            return null;
+        }
+        if (n1.next == null) {
             return n1;
         }
-        ListNode temp = null;
-        ListNode main = n1.next;
-        ListNode next = n1.next.next;
-        next = main.next;
-        main.next = temp;
-        temp = main;
-        main = next;
-        reverseHelper(n1.next);
-        return n1;
+        ListNode n2 = reverseHelper(n1.next);
+        return n2;
     }
 }
