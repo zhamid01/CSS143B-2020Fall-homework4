@@ -2,6 +2,12 @@ package Problem1;
 
 import java.util.Stack;
 
+/*
+These sites were used as help in this code:
+https://tutorialspoint.dev/data-structure/stack-data-structure/reverse-a-stack-using-recursion
+https://www.geeksforgeeks.org/reverse-a-stack-using-recursion/
+*/
+
 public class ReverseStack {
     public static void reverseStack(Stack<Integer> stack) {
         if (stack == null) {
