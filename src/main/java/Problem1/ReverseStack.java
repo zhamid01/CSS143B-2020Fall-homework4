@@ -4,6 +4,30 @@ import java.util.Stack;
 
 public class ReverseStack {
     public static void reverseStack(Stack<Integer> stack) {
-        // homework
+        if (stack == null) {
+            return;
+        }
+        reverse(stack);
+    }
+
+    private static void reverse(Stack<Integer> stack) {
+        if (stack.size() > 0) {
+            int n1 = stack.peek();
+            stack.pop();
+            reverse(stack);
+            reverseHelper(stack, n1);
+        }
+    }
+
+    private static void reverseHelper(Stack<Integer> stack, int n1) {
+        if (stack.isEmpty()) {
+            stack.push(n1);
+        }
+        else {
+            int n2 = stack.peek();
+            stack.pop();
+            reverseHelper(stack, n1);
+            stack.push(n2);
+        }
     }
 }
