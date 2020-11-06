@@ -3,6 +3,12 @@ package Problem1;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+This site was used as help in this code:
+https://www.geeksforgeeks.org/write-a-c-program-to-print-all-permutations-of-a-given-string/
+https://www.programcreek.com/2013/02/leetcode-permutations-java/
+ */
+
 public class Permutation {
     public static List<List<Integer>> permute(int[] nums) {
         List<List<Integer>> n1 = new ArrayList<List<Integer>>();
@@ -17,7 +23,8 @@ public class Permutation {
                 main.add(i);
             }
             n1.add(main);
-        } else {
+        }
+        else {
             for (int i = index; i < nums.length; i++) {
                 permuteSwapHelper(nums, index, i);
                 permuteHelper(nums, n1, index + 1);
