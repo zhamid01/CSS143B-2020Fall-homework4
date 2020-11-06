@@ -1,5 +1,7 @@
 package Problem2;
 
+import java.util.List;
+
 public class SortList {
     private static final int SENTRY = Integer.MAX_VALUE;
     // DO NOT ADD ANY NEW MEMBER VARIABLE AND MEMBER FUNCTION
@@ -17,8 +19,13 @@ public class SortList {
     }
 
     public static ListNode findMidAndBreak(ListNode head) {
-        int n = 0;
-        return null;
+        if (head == null || head.next == null) {
+            return null;
+        }
+        ListNode n2 = head;
+        n2 = findMidAndBreak(n2.next);
+        head = head.next;
+        return n2;
     }
 
     public static ListNode mergeLists(ListNode list1, ListNode list2) {
