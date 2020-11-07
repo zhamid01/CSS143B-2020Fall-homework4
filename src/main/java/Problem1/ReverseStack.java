@@ -26,7 +26,7 @@ public class ReverseStack {
     }
 
     private static void reverseHelper(Stack<Integer> stack, int n1) {
-        if (stack.isEmpty()) {
+        if (stack.size() == 0) {
             stack.push(n1);
         }
         else {

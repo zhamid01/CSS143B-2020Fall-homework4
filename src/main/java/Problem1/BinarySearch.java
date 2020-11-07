@@ -14,20 +14,20 @@ public class BinarySearch {
             return -1;
         }
         else {
-            return search(data, target, 0, data.length - 1);
+            return searchHelper(data, target, 0, data.length - 1);
         }
     }
 
-    public static int search(int[] data, int target, int start, int last) {
+    private static int searchHelper(int[] data, int target, int start, int last) {
         if (last >= start) {
             int middle = start + (last - start) / 2;
             if (data[middle] == target) {
                 return middle;
             }
             if (target < data[middle]) {
-                return search(data, target, 0, middle - 1);
+                return searchHelper(data, target, 0, middle - 1);
             }
-            return search(data, target, middle + 1, last);
+            return searchHelper(data, target, middle + 1, last);
         }
         return -1;
     }

@@ -5,7 +5,7 @@ import Problem2.ListNode;
 import java.io.PrintStream;
 
 /*
-This site ws used as help in this code:
+This site was used as help in this code:
 https://www.geeksforgeeks.org/print-reverse-of-a-linked-list-without-actually-reversing/
 */
 

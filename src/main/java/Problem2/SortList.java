@@ -4,7 +4,6 @@ import java.util.List;
 
 /*
 This site was used as help:
-https://www.geeksforgeeks.org/find-length-of-a-linked-list-iterative-and-recursive/
 https://www.geeksforgeeks.org/merge-two-sorted-lists-place/
 */
 
@@ -28,15 +27,19 @@ public class SortList {
         if (head == null || head.next == null) {
             return null;
         }
+        ListNode n1 = head;
+        ListNode n2 = head;
         int size = getCount(head);
         int middle = 0 + (size + 0) / 2;
-        for (int i = 0; i < middle; i++) {
+        for (int i = 1; i < middle; i++) {
             head = head.next;
         }
+        n2 = head.next;
         head.next = null;
-        return head;
+        return n2;
     }
-    public static int getCount(ListNode head) {
+    
+    private static int getCount(ListNode head) {
         int count = 0;
         while (head != null) {
             count++;
