@@ -2,6 +2,11 @@ package Problem2;
 
 import java.util.List;
 
+/*
+This site was used as help:
+https://www.geeksforgeeks.org/find-length-of-a-linked-list-iterative-and-recursive/
+*/
+
 public class SortList {
     private static final int SENTRY = Integer.MAX_VALUE;
     // DO NOT ADD ANY NEW MEMBER VARIABLE AND MEMBER FUNCTION
@@ -19,15 +24,19 @@ public class SortList {
     }
 
     public static ListNode findMidAndBreak(ListNode head) {
-        if (head == null || head.next == null) {
-            return null;
-        }
-        ListNode second = head;
+        return null;
+    }
 
-        second.next = findMidAndBreak(head.next);
-        head = head.next;
-        second.next = null;
-        return second;
+    public int getNodeCount(ListNode n1) {
+        if (n1 == null) {
+            return 0;
+        }
+        int count = 1 + getNodeCount(n1.next);
+        return count;
+    }
+
+    public int getCount(ListNode head) {
+        return getNodeCount(head);
     }
 
     public static ListNode mergeLists(ListNode list1, ListNode list2) {

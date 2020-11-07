@@ -11,10 +11,11 @@ https://www.geeksforgeeks.org/print-reverse-of-a-linked-list-without-actually-re
 
 public class Problem3 {
     public static void printListInReverse(ListNode list, PrintStream print) {
-        if (list == null) {
+        ListNode n1 = list;
+        if (n1 == null) {
             return;
         }
-        printListInReverse(list.next, print);
-        print.println(list.val);
+        printListInReverse(n1.next, print);
+        print.println(n1.val);
     }
 }
