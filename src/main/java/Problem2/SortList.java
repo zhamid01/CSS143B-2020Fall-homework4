@@ -22,10 +22,12 @@ public class SortList {
         if (head == null || head.next == null) {
             return null;
         }
-        ListNode n2 = head;
-        n2 = findMidAndBreak(n2.next);
+        ListNode second = head;
+
+        second.next = findMidAndBreak(head.next);
         head = head.next;
-        return n2;
+        second.next = null;
+        return second;
     }
 
     public static ListNode mergeLists(ListNode list1, ListNode list2) {
