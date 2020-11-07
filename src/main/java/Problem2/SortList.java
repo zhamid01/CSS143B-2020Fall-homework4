@@ -28,23 +28,21 @@ public class SortList {
         if (head == null || head.next == null) {
             return null;
         }
-        int length = 0;
-        ListNode n1 = head;
-        while (head != null) {
-            length++;
+        int size = getCount(head);
+        int middle = 0 + (size + 0) / 2;
+        for (int i = 0; i < middle; i++) {
             head = head.next;
         }
-        while (n1.next !=null) {
-            int middle = 0 + (length - 0) / 2;
-            for (int i = 0; i <= length; i++) {
-                if (i >= middle) {
-                    return n1;
-                }
-                n1 = n1.next;
-            }
-            n1.next = null;
+        head.next = null;
+        return head;
+    }
+    public static int getCount(ListNode head) {
+        int count = 0;
+        while (head != null) {
+            count++;
+            head = head.next;
         }
-        return n1;
+        return count;
     }
 
     public static ListNode mergeLists(ListNode list1, ListNode list2) {
