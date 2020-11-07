@@ -19,8 +19,8 @@ public class Permutation {
     private static void permuteHelper(int[] nums, List<List<Integer>> n1, int index) {
         if (index >= nums.length) {
             List<Integer> main = new ArrayList<Integer>();
-            for (int i : nums) {
-                main.add(i);
+            for (int i = 0; i < nums.length; i++) {
+                main.add(nums[i]);
             }
             n1.add(main);
         }
@@ -33,6 +33,7 @@ public class Permutation {
         }
     }
 
+    //Used to swap values
     private static void permuteSwapHelper(int[] nums, int n, int m) {
         int main = nums[n];
         nums[n] = nums[m];
