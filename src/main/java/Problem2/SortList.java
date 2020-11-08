@@ -1,5 +1,13 @@
 package Problem2;
 
+import java.util.List;
+
+/*
+These sites were used as help:
+https://www.geeksforgeeks.org/find-length-of-a-linked-list-iterative-and-recursive/
+https://www.geeksforgeeks.org/merge-two-sorted-lists-place/
+*/
+
 public class SortList {
     private static final int SENTRY = Integer.MAX_VALUE;
     // DO NOT ADD ANY NEW MEMBER VARIABLE AND MEMBER FUNCTION
@@ -17,12 +25,44 @@ public class SortList {
     }
 
     public static ListNode findMidAndBreak(ListNode head) {
-        // homework
-        return null;
+        if (head == null || head.next == null) {
+            return null;
+        }
+        ListNode n1 = head;
+        ListNode n2 = head;
+        int size = getCount(head);
+        int middle = 0 + (size + 0) / 2;
+        for (int i = 1; i < middle; i++) {
+            head = head.next;
+        }
+        n2 = head.next;
+        head.next = null;
+        return n2;
+    }
+    
+    private static int getCount(ListNode head) {
+        int count = 0;
+        while (head != null) {
+            count++;
+            head = head.next;
+        }
+        return count;
     }
 
     public static ListNode mergeLists(ListNode list1, ListNode list2) {
-        // homework
-        return null;
+        if (list1 == null) {
+            return list2;
+        }
+        else if (list2 == null) {
+            return list1;
+        }
+        if (list1.val > list2.val) {
+            list2.next = mergeLists(list1, list2.next);
+            return list2;
+        }
+        else {
+            list1.next = mergeLists(list1.next, list2);
+            return list1;
+        }
     }
 }
