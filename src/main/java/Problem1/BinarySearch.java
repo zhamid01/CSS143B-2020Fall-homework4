@@ -24,6 +24,8 @@ public class BinarySearch {
             if (data[middle] == target) {
                 return middle;
             }
+            //Since this is a sorted array, it checks if the target is less that or more than that value at middle
+            //Then it increases the start value past middle or the last value before middle.
             if (target < data[middle]) {
                 return searchHelper(data, target, 0, middle - 1);
             }
