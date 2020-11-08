@@ -3,7 +3,8 @@ package Problem2;
 import java.util.List;
 
 /*
-This site was used as help:
+These sites were used as help:
+https://www.geeksforgeeks.org/find-length-of-a-linked-list-iterative-and-recursive/
 https://www.geeksforgeeks.org/merge-two-sorted-lists-place/
 */
 

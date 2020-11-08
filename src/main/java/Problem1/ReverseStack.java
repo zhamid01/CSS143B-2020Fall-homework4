@@ -19,20 +19,28 @@ public class ReverseStack {
     private static void reverse(Stack<Integer> stack) {
         if (stack.size() > 0) {
             int n1 = stack.peek();
+            //Removes first value
             stack.pop();
+            //Calls the reverse method using the stack after the pop
             reverse(stack);
+            //Calls the helper sending the stack and the n1 value
             reverseHelper(stack, n1);
         }
     }
 
     private static void reverseHelper(Stack<Integer> stack, int n1) {
+        //Pushes n1 if the stack is empty
         if (stack.size() == 0) {
             stack.push(n1);
         }
         else {
+            //Sets the first value to n2
             int n2 = stack.peek();
+            //Removes top value
             stack.pop();
+            //Calls back to helper with stack and n1
             reverseHelper(stack, n1);
+            //Pushes n2 to the stack
             stack.push(n2);
         }
     }
